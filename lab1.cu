@@ -226,7 +226,7 @@ int main(int argc, char** argv) {
 
     /* Hint 2 */
     // cudaMemcpy(...) copy source image to device (filter matrix if necessary)
-    cudaMemcpy(d_s, &host_s, height * width * channels * sizeof(unsigned char), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_s, host_s, height * width * channels * sizeof(unsigned char), cudaMemcpyHostToDevice);
     cudaMemcpyToSymbol(mask, h_mask, sizeof(h_mask));
 
     /* Hint 3 */
